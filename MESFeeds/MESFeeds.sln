@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1267
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleMESFeeds", "OracleMESFeeds\OracleMESFeeds.csproj", "{C6C633E5-F3DD-4C63-910F-61AB13F8933C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMESFeed", "TestMESFeed\TestMESFeed.csproj", "{95062F1F-B244-4926-9EF5-E92AB176AD69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDBMESFeeds", "TDBMESFeeds\TDBMESFeeds.csproj", "{E08FFC9E-337E-4A07-A5C2-2B082279D6D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMRAMMesFeeds", "BMRAMMesFeeds\BMRAMMesFeeds.csproj", "{0DD03336-9837-4E5D-857F-481045DC9869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MESFeedClientLibrary", "MESFeedClientLibrary\MESFeedClientLibrary.csproj", "{953CD3E0-8A84-4DAA-8B29-0DED9F66CA69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{314C519C-EAE9-4268-8A49-10EEB2883F6C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6C633E5-F3DD-4C63-910F-61AB13F8933C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6C633E5-F3DD-4C63-910F-61AB13F8933C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6C633E5-F3DD-4C63-910F-61AB13F8933C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6C633E5-F3DD-4C63-910F-61AB13F8933C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95062F1F-B244-4926-9EF5-E92AB176AD69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95062F1F-B244-4926-9EF5-E92AB176AD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95062F1F-B244-4926-9EF5-E92AB176AD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95062F1F-B244-4926-9EF5-E92AB176AD69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E08FFC9E-337E-4A07-A5C2-2B082279D6D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E08FFC9E-337E-4A07-A5C2-2B082279D6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E08FFC9E-337E-4A07-A5C2-2B082279D6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E08FFC9E-337E-4A07-A5C2-2B082279D6D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD03336-9837-4E5D-857F-481045DC9869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD03336-9837-4E5D-857F-481045DC9869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD03336-9837-4E5D-857F-481045DC9869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD03336-9837-4E5D-857F-481045DC9869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{953CD3E0-8A84-4DAA-8B29-0DED9F66CA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953CD3E0-8A84-4DAA-8B29-0DED9F66CA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953CD3E0-8A84-4DAA-8B29-0DED9F66CA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953CD3E0-8A84-4DAA-8B29-0DED9F66CA69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{314C519C-EAE9-4268-8A49-10EEB2883F6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{314C519C-EAE9-4268-8A49-10EEB2883F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{314C519C-EAE9-4268-8A49-10EEB2883F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{314C519C-EAE9-4268-8A49-10EEB2883F6C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C6B3C1DD-271E-48D1-9FFE-5DB3BF48BF6A}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://usmer-tfs001:8080/tfs/validatedsoftwarecollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = OracleMESFeeds\\OracleMESFeeds.csproj
+		SccProjectName1 = OracleMESFeeds
+		SccLocalPath1 = OracleMESFeeds
+		SccProjectUniqueName2 = TestMESFeed\\TestMESFeed.csproj
+		SccProjectName2 = TestMESFeed
+		SccLocalPath2 = TestMESFeed
+		SccProjectUniqueName3 = TDBMESFeeds\\TDBMESFeeds.csproj
+		SccProjectName3 = TDBMESFeeds
+		SccLocalPath3 = TDBMESFeeds
+		SccProjectUniqueName4 = BMRAMMesFeeds\\BMRAMMesFeeds.csproj
+		SccProjectName4 = BMRAMMesFeeds
+		SccLocalPath4 = BMRAMMesFeeds
+		SccProjectUniqueName5 = MESFeedClientLibrary\\MESFeedClientLibrary.csproj
+		SccProjectName5 = MESFeedClientLibrary
+		SccLocalPath5 = MESFeedClientLibrary
+		SccProjectUniqueName6 = UnitTests\\UnitTests.csproj
+		SccProjectName6 = UnitTests
+		SccLocalPath6 = UnitTests
+	EndGlobalSection
+EndGlobal

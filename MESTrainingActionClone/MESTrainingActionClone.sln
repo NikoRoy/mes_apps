@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2017
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingActionCloneClient", "ConsoleApp1\TrainingActionCloneClient.csproj", "{75056B9A-3A30-4F69-9DFD-66F55B482846}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDBModelLibrary", "TDBModelLibrary\TDBModelLibrary.csproj", "{68205329-A189-4065-97E4-95F58C759E61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloneClientTests", "CloneClientTests\CloneClientTests.csproj", "{969CBC53-A11C-4532-B7CD-AF0BA2383CF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75056B9A-3A30-4F69-9DFD-66F55B482846}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75056B9A-3A30-4F69-9DFD-66F55B482846}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75056B9A-3A30-4F69-9DFD-66F55B482846}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75056B9A-3A30-4F69-9DFD-66F55B482846}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68205329-A189-4065-97E4-95F58C759E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68205329-A189-4065-97E4-95F58C759E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68205329-A189-4065-97E4-95F58C759E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68205329-A189-4065-97E4-95F58C759E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{969CBC53-A11C-4532-B7CD-AF0BA2383CF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969CBC53-A11C-4532-B7CD-AF0BA2383CF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969CBC53-A11C-4532-B7CD-AF0BA2383CF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969CBC53-A11C-4532-B7CD-AF0BA2383CF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CCF4591D-9962-4E2C-8041-75909D6B4B17}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://usmer-tfs001:8080/tfs/validatedsoftwarecollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ConsoleApp1\\TrainingActionCloneClient.csproj
+		SccProjectName1 = ConsoleApp1
+		SccLocalPath1 = ConsoleApp1
+		SccProjectUniqueName2 = TDBModelLibrary\\TDBModelLibrary.csproj
+		SccProjectName2 = TDBModelLibrary
+		SccLocalPath2 = TDBModelLibrary
+		SccProjectUniqueName3 = CloneClientTests\\CloneClientTests.csproj
+		SccProjectName3 = CloneClientTests
+		SccLocalPath3 = CloneClientTests
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml.Serialization;
+
+namespace MESFeedClientLibrary.Model.Training.Messages
+{
+    [Serializable, XmlType("Message")]
+    public class TrainingRecordDownloadLite
+    {
+        public string EmployeeName { get; set; }
+        public string TrainingRequirementName { get; set; }
+    }
+}

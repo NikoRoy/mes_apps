@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Product App</title>
+</head>
+<body>
+
+    <div>
+        <h2>All docs</h2>
+        <ul id="docs" />
+    </div>
+    <div>
+        <h2>Search by ID</h2>
+        <input type="text" id="docId" size="5" />
+        <input type="button" value="Search" onclick="find();" />
+        <p id="doc" />
+    </div>
+    <div>
+        <h2>Post test</h2>
+        <input type="text" id="document" size="10" />
+        <input type="text" id="rev" size="2" />
+        <input type="text" id="url" size="25" />
+        <input type="text" id="desc" size="20" />
+        <input type="button" value="Search" onclick="testpost();" />
+        <p id="newdoc" />
+    </div>
+    <div>
+        <h2>Put</h2>
+        <input type="text" id="putid" size="10" />
+        <input type="button" value="Search" onclick="testput();" />
+    </div>
+    <div>
+        <h2>Delete</h2>
+        <input type="text" id="delid" size="10" />
+        <input type="button" value="Search" onclick="testdelete();" />
+    </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+        var uri = 'api/oracleworkorder';
+
+        $(document).ready(function () {
+            // Send an AJAX request
+            $.getJSON(uri)
+                .done(function (data) {
+                    // On success, 'data' contains a list of products.
+                    $.each(data, function (key, item) {
+                        // Add a list item for the product.
+                        $('<li>', { text: formatItem(item) }).appendTo($('#doc'));
+                    });
+                });
+        });
+
+        function formatItem(item) {
+            return item.DocumentID + ': $' + item.Revision;
+        }
+
+        function find() {
+            var id = $('#docId').val();
+            $.getJSON(uri + '/' + id)
+                .done(function (data) {
+                    $('#doc').text(formatItem(data));
+                })
+                .fail(function (jqXHR, textStatus, err) {
+                    $('#doc').text('Error: ' + err);
+                });
+        }
+
+
+
+        function testpost() {
+            //$.post(uri,
+            //    {
+            //        name: "John",
+            //        time: "2pm"
+            //    })
+            //    .done( function(data, status)
+            //    {
+            //        alert("Data:" + data + "\nStatus: " + status);
+            //    }
+            //);
+            var test = $('#document').val();
+            
+            $.ajax({
+                url: uri,
+                type: 'POST',
+                    data: JSON.stringify(test),
+                contentType: "application/json; charset=UTF-8",
+                dataType: "xml",
+                processData: true,
+                success: function (data, status) {
+                    alert("Data:" + data + "\nStatus: " + status);
+                },
+                error: function (data, status) {
+                    alert("Data:" + data + "\nStatus: " + status);
+                }
+            });
+        }
+        function testput() {
+
+            var urii = uri + '/MP001'
+            var testval = $('#putid').val();
+
+            $.ajax({
+                url: urii,
+                type: 'PUT',
+                contentType: "application/json; charset=UTF-8",
+                dataType: 'xml',
+                data: JSON.stringify(testval),
+                success: function (data, textStatus, xhr) {
+                    alert("Data:" + data + "\nStatus: " + textStatus + "\nXHR: " + xhr);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("XHR:" + xhr + "\nStatus: " + textStatus + "\nError:" + errorThrown);
+                }
+            });
+        }
+        function testdelete() {
+
+            var urii = uri + '/MP001'
+            var testval = $('#delid').val();
+
+            $.ajax({
+                url: uri,
+                type: 'DELETE',
+                contentType: "application/json; charset=UTF-8",
+                dataType: 'xml',
+                data: JSON.stringify(testval),
+                success: function (data, textStatus, xhr) {
+                    alert("Data:" + data + "\nStatus: " + textStatus + "\nXHR: " + xhr);
+                },
+                error: function (xhr, textStatus, errorThrown) {
+                    alert("XHR:" + xhr + "\nStatus: " + textStatus + "\nError:" + errorThrown);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

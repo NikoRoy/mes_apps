@@ -1,0 +1,11 @@
+*.htm
+.vs/
+bin/
+obj/
+*.config
+*.vssscc
+*.user
+Logs/
+TestResults/
+Credentials.cs
+ServiceBusTests.cs

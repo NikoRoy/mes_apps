@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="748981faf7a148a0ac234f9d4dcb0263" Name="Diagram1">
+        <EntityTypeShape EntityType="EmployeeTrainingModel.ChangeOrderRequiredTraining" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeTrainingModel.tblCurrentTrainingRequirement" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeTrainingModel.tblTrainingHistory" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeTrainingModel.xxatr_jobprocedure_tracking" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EmployeeTrainingModel.ElectronicSignature" Width="1.5" PointX="4.625" PointY="6.75" />
+        <AssociationConnector Association="EmployeeTrainingModel.FK_tblCurrentTrainingRequirements_AssignedElectronicSignatures" />
+        <AssociationConnector Association="EmployeeTrainingModel.FK_tblCurrentTrainingRequirements_DeletedElectronicSignatures" />
+        <AssociationConnector Association="EmployeeTrainingModel.FK_tblTrainingHistory_ElectronicSignatures" />
+        <AssociationConnector Association="EmployeeTrainingModel.FK_tblTrainingHistory_ElectronicSignatures_Active" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

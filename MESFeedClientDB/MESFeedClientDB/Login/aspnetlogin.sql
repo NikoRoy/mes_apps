@@ -1,0 +1,1 @@
+﻿CREATE LOGIN [aspnet] WITH PASSWORD = '98Tig@'

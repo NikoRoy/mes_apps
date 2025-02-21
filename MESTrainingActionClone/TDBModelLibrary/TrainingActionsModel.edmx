@@ -1,0 +1,507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EmployeeTrainingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChangeOrderRequiredTraining">
+          <Key>
+            <PropertyRef Name="ChangeOrderRequiredTrainingId" />
+          </Key>
+          <Property Name="ChangeOrderRequiredTrainingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ChangeOrderNumber" Type="varchar" MaxLength="10" />
+          <Property Name="EmployeeNumber" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="255" />
+          <Property Name="DocumentId" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Revision" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="RequiredTrainingLevel" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DueDateModifier" Type="int" />
+          <Property Name="Active" Type="bit" Nullable="false" />
+          <Property Name="Committed" Type="bit" Nullable="false" />
+          <Property Name="CreatedAtDateTime" Type="datetime" Nullable="false" />
+          <Property Name="CreatedByUser" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ModifiedAtDateTime" Type="datetime" />
+          <Property Name="ModifiedByUser" Type="varchar" MaxLength="255" />
+          <Property Name="ModifiedReasonCode" Type="int" />
+          <Property Name="ModifiedReasonOther" Type="varchar" MaxLength="255" />
+          <Property Name="InactivatedAtDateTime" Type="datetime" />
+          <Property Name="InactivatedByUser" Type="varchar" MaxLength="255" />
+          <Property Name="InactivatedReasonCode" Type="int" />
+          <Property Name="InactivatedReasonOther" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="ElectronicSignatures">
+          <Key>
+            <PropertyRef Name="ElectronicSignatureId" />
+          </Key>
+          <Property Name="ElectronicSignatureId" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="EmployeeNumber" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="PasswordVerifiedDateTime" Type="datetime" Nullable="false" />
+          <Property Name="ExecutedDateTime" Type="datetime" />
+          <Property Name="ExecutedPurpose" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tblCurrentTrainingRequirements">
+          <Key>
+            <PropertyRef Name="CurrentTrainingID" />
+          </Key>
+          <Property Name="CurrentTrainingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Employee_number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CurrentTrainingDocID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="EnteredDate" Type="smalldatetime" />
+          <Property Name="EnteredBy" Type="varchar" MaxLength="100" />
+          <Property Name="AssignedByElectronicSignatureId" Type="uniqueidentifier" />
+          <Property Name="CurrentTrainingType" Type="varchar" MaxLength="10" />
+          <Property Name="Previous_Employee_Number" Type="varchar" MaxLength="20" />
+          <Property Name="Employee_Number_UpdatedOn" Type="smalldatetime" />
+          <Property Name="Employee_Number_UpdatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="DeletedBy" Type="varchar" MaxLength="255" />
+          <Property Name="DeletedByElectronicSignatureId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="tblTrainingHistory">
+          <Key>
+            <PropertyRef Name="TrainingHistoryID" />
+          </Key>
+          <Property Name="TrainingHistoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Employee_Number" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TrainTitle" Type="varchar" MaxLength="100" />
+          <Property Name="TrainDeptName" Type="varchar" MaxLength="150" />
+          <Property Name="TrainDeptNum" Type="varchar" MaxLength="20" />
+          <Property Name="TrainDocID" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="TrainDocRev" Type="varchar" MaxLength="10" />
+          <Property Name="TrainValidatedByNumber" Type="varchar" MaxLength="20" />
+          <Property Name="TrainValidatedByFirstName" Type="varchar" MaxLength="50" />
+          <Property Name="TrainValidatedByLastName" Type="varchar" MaxLength="50" />
+          <Property Name="TrainDate" Type="smalldatetime" />
+          <Property Name="EnteredDate" Type="smalldatetime" />
+          <Property Name="EnteredBy" Type="varchar" MaxLength="100" />
+          <Property Name="Previous_Employee_Number" Type="varchar" MaxLength="20" />
+          <Property Name="Employee_Number_UpdatedOn" Type="smalldatetime" />
+          <Property Name="Employee_Number_UpdatedBy" Type="varchar" MaxLength="100" />
+          <Property Name="ElectronicSignatureId" Type="uniqueidentifier" />
+          <Property Name="TrainingLevel" Type="char" MaxLength="2" />
+          <Property Name="ActiveTrainingApproval" Type="char" MaxLength="1" />
+          <Property Name="ActiveTrainingApprovedBy" Type="varchar" MaxLength="220" />
+          <Property Name="ActiveTrainingApprovedOn" Type="smalldatetime" />
+          <Property Name="ActiveTrainingElecronicSignatureId" Type="uniqueidentifier" />
+        </EntityType>
+        <EntityType Name="xxatr_jobprocedure_tracking">
+          <Key>
+            <PropertyRef Name="trackID" />
+          </Key>
+          <Property Name="trackID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="employee_number" Type="varchar" MaxLength="255" />
+          <Property Name="job_number" Type="varchar" MaxLength="255" />
+          <Property Name="job_type" Type="varchar" MaxLength="50" />
+          <Property Name="scanID" Type="uniqueidentifier" />
+          <Property Name="bundle" Type="varchar" MaxLength="255" />
+          <Property Name="doc_ID" Type="varchar" MaxLength="255" />
+          <Property Name="status" Type="varchar" MaxLength="255" />
+          <Property Name="createDate" Type="datetime" />
+          <Property Name="isTraining" Type="bit" />
+          <Property Name="recordedBy" Type="varchar" MaxLength="255" />
+          <Property Name="logoutDate" Type="datetime" />
+          <Property Name="trainerEmployeeId" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <Association Name="FK_tblCurrentTrainingRequirements_AssignedElectronicSignatures">
+          <End Role="ElectronicSignatures" Type="Self.ElectronicSignatures" Multiplicity="0..1" />
+          <End Role="tblCurrentTrainingRequirements" Type="Self.tblCurrentTrainingRequirements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicSignatures">
+              <PropertyRef Name="ElectronicSignatureId" />
+            </Principal>
+            <Dependent Role="tblCurrentTrainingRequirements">
+              <PropertyRef Name="AssignedByElectronicSignatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCurrentTrainingRequirements_DeletedElectronicSignatures">
+          <End Role="ElectronicSignatures" Type="Self.ElectronicSignatures" Multiplicity="0..1" />
+          <End Role="tblCurrentTrainingRequirements" Type="Self.tblCurrentTrainingRequirements" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicSignatures">
+              <PropertyRef Name="ElectronicSignatureId" />
+            </Principal>
+            <Dependent Role="tblCurrentTrainingRequirements">
+              <PropertyRef Name="DeletedByElectronicSignatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTrainingHistory_ElectronicSignatures">
+          <End Role="ElectronicSignatures" Type="Self.ElectronicSignatures" Multiplicity="0..1" />
+          <End Role="tblTrainingHistory" Type="Self.tblTrainingHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicSignatures">
+              <PropertyRef Name="ElectronicSignatureId" />
+            </Principal>
+            <Dependent Role="tblTrainingHistory">
+              <PropertyRef Name="ElectronicSignatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTrainingHistory_ElectronicSignatures_Active">
+          <End Role="ElectronicSignatures" Type="Self.ElectronicSignatures" Multiplicity="0..1" />
+          <End Role="tblTrainingHistory" Type="Self.tblTrainingHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicSignatures">
+              <PropertyRef Name="ElectronicSignatureId" />
+            </Principal>
+            <Dependent Role="tblTrainingHistory">
+              <PropertyRef Name="ActiveTrainingElecronicSignatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="pExecuteElectronicSignature" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="ElectronicSignatureId" Type="uniqueidentifier" Mode="In" />
+          <Parameter Name="ExecutedPurpose" Type="varchar" Mode="In" />
+          <Parameter Name="Result" Type="int" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="EmployeeTrainingModelStoreContainer">
+          <EntitySet Name="ChangeOrderRequiredTraining" EntityType="Self.ChangeOrderRequiredTraining" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ElectronicSignatures" EntityType="Self.ElectronicSignatures" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCurrentTrainingRequirements" EntityType="Self.tblCurrentTrainingRequirements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblTrainingHistory" EntityType="Self.tblTrainingHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="xxatr_jobprocedure_tracking" EntityType="Self.xxatr_jobprocedure_tracking" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_tblCurrentTrainingRequirements_AssignedElectronicSignatures" Association="Self.FK_tblCurrentTrainingRequirements_AssignedElectronicSignatures">
+            <End Role="ElectronicSignatures" EntitySet="ElectronicSignatures" />
+            <End Role="tblCurrentTrainingRequirements" EntitySet="tblCurrentTrainingRequirements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCurrentTrainingRequirements_DeletedElectronicSignatures" Association="Self.FK_tblCurrentTrainingRequirements_DeletedElectronicSignatures">
+            <End Role="ElectronicSignatures" EntitySet="ElectronicSignatures" />
+            <End Role="tblCurrentTrainingRequirements" EntitySet="tblCurrentTrainingRequirements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTrainingHistory_ElectronicSignatures" Association="Self.FK_tblTrainingHistory_ElectronicSignatures">
+            <End Role="ElectronicSignatures" EntitySet="ElectronicSignatures" />
+            <End Role="tblTrainingHistory" EntitySet="tblTrainingHistory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTrainingHistory_ElectronicSignatures_Active" Association="Self.FK_tblTrainingHistory_ElectronicSignatures_Active">
+            <End Role="ElectronicSignatures" EntitySet="ElectronicSignatures" />
+            <End Role="tblTrainingHistory" EntitySet="tblTrainingHistory" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmployeeTrainingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ChangeOrderRequiredTraining">
+          <Key>
+            <PropertyRef Name="ChangeOrderRequiredTrainingId" />
+          </Key>
+          <Property Name="ChangeOrderRequiredTrainingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ChangeOrderNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DocumentId" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Revision" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RequiredTrainingLevel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DueDateModifier" Type="Int32" />
+          <Property Name="Active" Type="Boolean" Nullable="false" />
+          <Property Name="Committed" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedAtDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedByUser" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ModifiedAtDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedByUser" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ModifiedReasonCode" Type="Int32" />
+          <Property Name="ModifiedReasonOther" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="InactivatedAtDateTime" Type="DateTime" Precision="3" />
+          <Property Name="InactivatedByUser" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="InactivatedReasonCode" Type="Int32" />
+          <Property Name="InactivatedReasonOther" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblCurrentTrainingRequirement">
+          <Key>
+            <PropertyRef Name="CurrentTrainingID" />
+          </Key>
+          <Property Name="CurrentTrainingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Employee_number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CurrentTrainingDocID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EnteredDate" Type="DateTime" Precision="0" />
+          <Property Name="EnteredBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="AssignedByElectronicSignatureId" Type="Guid" />
+          <Property Name="CurrentTrainingType" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Previous_Employee_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Employee_Number_UpdatedOn" Type="DateTime" Precision="0" />
+          <Property Name="Employee_Number_UpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DeletedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DeletedByElectronicSignatureId" Type="Guid" />
+          <NavigationProperty Name="ElectronicSignature" Relationship="EmployeeTrainingModel.FK_tblCurrentTrainingRequirements_AssignedElectronicSignatures" FromRole="tblCurrentTrainingRequirement" ToRole="ElectronicSignature" />
+          <NavigationProperty Name="ElectronicSignature1" Relationship="EmployeeTrainingModel.FK_tblCurrentTrainingRequirements_DeletedElectronicSignatures" FromRole="tblCurrentTrainingRequirement" ToRole="ElectronicSignature" />
+        </EntityType>
+        <EntityType Name="tblTrainingHistory">
+          <Key>
+            <PropertyRef Name="TrainingHistoryID" />
+          </Key>
+          <Property Name="TrainingHistoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Employee_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrainTitle" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TrainDeptName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="TrainDeptNum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TrainDocID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TrainDocRev" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TrainValidatedByNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="TrainValidatedByFirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TrainValidatedByLastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TrainDate" Type="DateTime" Precision="0" />
+          <Property Name="EnteredDate" Type="DateTime" Precision="0" />
+          <Property Name="EnteredBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Previous_Employee_Number" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Employee_Number_UpdatedOn" Type="DateTime" Precision="0" />
+          <Property Name="Employee_Number_UpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ElectronicSignatureId" Type="Guid" />
+          <Property Name="TrainingLevel" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="ActiveTrainingApproval" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ActiveTrainingApprovedBy" Type="String" MaxLength="220" FixedLength="false" Unicode="false" />
+          <Property Name="ActiveTrainingApprovedOn" Type="DateTime" Precision="0" />
+          <Property Name="ActiveTrainingElecronicSignatureId" Type="Guid" />
+          <NavigationProperty Name="ElectronicSignature" Relationship="EmployeeTrainingModel.FK_tblTrainingHistory_ElectronicSignatures" FromRole="tblTrainingHistory" ToRole="ElectronicSignature" />
+          <NavigationProperty Name="ElectronicSignature1" Relationship="EmployeeTrainingModel.FK_tblTrainingHistory_ElectronicSignatures_Active" FromRole="tblTrainingHistory" ToRole="ElectronicSignature" />
+        </EntityType>
+        <EntityType Name="xxatr_jobprocedure_tracking">
+          <Key>
+            <PropertyRef Name="trackID" />
+          </Key>
+          <Property Name="trackID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="employee_number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="job_number" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="job_type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="scanID" Type="Guid" />
+          <Property Name="bundle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="doc_ID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="createDate" Type="DateTime" Precision="3" />
+          <Property Name="isTraining" Type="Boolean" />
+          <Property Name="recordedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="logoutDate" Type="DateTime" Precision="3" />
+          <Property Name="trainerEmployeeId" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="EmployeeTrainingEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChangeOrderRequiredTrainings" EntityType="Self.ChangeOrderRequiredTraining" />
+          <EntitySet Name="tblCurrentTrainingRequirements" EntityType="Self.tblCurrentTrainingRequirement" />
+          <EntitySet Name="tblTrainingHistories" EntityType="Self.tblTrainingHistory" />
+          <EntitySet Name="xxatr_jobprocedure_tracking" EntityType="Self.xxatr_jobprocedure_tracking" />
+          <EntitySet Name="ElectronicSignatures" EntityType="EmployeeTrainingModel.ElectronicSignature" />
+          <AssociationSet Name="FK_tblCurrentTrainingRequirements_AssignedElectronicSignatures" Association="EmployeeTrainingModel.FK_tblCurrentTrainingRequirements_AssignedElectronicSignatures">
+            <End Role="ElectronicSignature" EntitySet="ElectronicSignatures" />
+            <End Role="tblCurrentTrainingRequirement" EntitySet="tblCurrentTrainingRequirements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblCurrentTrainingRequirements_DeletedElectronicSignatures" Association="EmployeeTrainingModel.FK_tblCurrentTrainingRequirements_DeletedElectronicSignatures">
+            <End Role="ElectronicSignature" EntitySet="ElectronicSignatures" />
+            <End Role="tblCurrentTrainingRequirement" EntitySet="tblCurrentTrainingRequirements" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTrainingHistory_ElectronicSignatures" Association="EmployeeTrainingModel.FK_tblTrainingHistory_ElectronicSignatures">
+            <End Role="ElectronicSignature" EntitySet="ElectronicSignatures" />
+            <End Role="tblTrainingHistory" EntitySet="tblTrainingHistories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblTrainingHistory_ElectronicSignatures_Active" Association="EmployeeTrainingModel.FK_tblTrainingHistory_ElectronicSignatures_Active">
+            <End Role="ElectronicSignature" EntitySet="ElectronicSignatures" />
+            <End Role="tblTrainingHistory" EntitySet="tblTrainingHistories" />
+          </AssociationSet>
+          <FunctionImport Name="pExecuteElectronicSignature">
+            <Parameter Name="ElectronicSignatureId" Mode="In" Type="Guid" />
+            <Parameter Name="ExecutedPurpose" Mode="In" Type="String" />
+            <Parameter Name="Result" Mode="InOut" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <EntityType Name="ElectronicSignature">
+          <Key>
+            <PropertyRef Name="ElectronicSignatureId" />
+          </Key>
+          <Property Name="ElectronicSignatureId" Type="Guid" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeNumber" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="PasswordVerifiedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ExecutedDateTime" Type="DateTime" Precision="3" />
+          <Property Name="ExecutedPurpose" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tblCurrentTrainingRequirements" Relationship="EmployeeTrainingModel.FK_tblCurrentTrainingRequirements_AssignedElectronicSignatures" FromRole="ElectronicSignature" ToRole="tblCurrentTrainingRequirement" />
+          <NavigationProperty Name="tblCurrentTrainingRequirements1" Relationship="EmployeeTrainingModel.FK_tblCurrentTrainingRequirements_DeletedElectronicSignatures" FromRole="ElectronicSignature" ToRole="tblCurrentTrainingRequirement" />
+          <NavigationProperty Name="tblTrainingHistories" Relationship="EmployeeTrainingModel.FK_tblTrainingHistory_ElectronicSignatures" FromRole="ElectronicSignature" ToRole="tblTrainingHistory" />
+          <NavigationProperty Name="tblTrainingHistories1" Relationship="EmployeeTrainingModel.FK_tblTrainingHistory_ElectronicSignatures_Active" FromRole="ElectronicSignature" ToRole="tblTrainingHistory" />
+        </EntityType>
+        <Association Name="FK_tblCurrentTrainingRequirements_AssignedElectronicSignatures">
+          <End Type="EmployeeTrainingModel.ElectronicSignature" Role="ElectronicSignature" Multiplicity="0..1" />
+          <End Type="EmployeeTrainingModel.tblCurrentTrainingRequirement" Role="tblCurrentTrainingRequirement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicSignature">
+              <PropertyRef Name="ElectronicSignatureId" />
+            </Principal>
+            <Dependent Role="tblCurrentTrainingRequirement">
+              <PropertyRef Name="AssignedByElectronicSignatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblCurrentTrainingRequirements_DeletedElectronicSignatures">
+          <End Type="EmployeeTrainingModel.ElectronicSignature" Role="ElectronicSignature" Multiplicity="0..1" />
+          <End Type="EmployeeTrainingModel.tblCurrentTrainingRequirement" Role="tblCurrentTrainingRequirement" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicSignature">
+              <PropertyRef Name="ElectronicSignatureId" />
+            </Principal>
+            <Dependent Role="tblCurrentTrainingRequirement">
+              <PropertyRef Name="DeletedByElectronicSignatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTrainingHistory_ElectronicSignatures">
+          <End Type="EmployeeTrainingModel.ElectronicSignature" Role="ElectronicSignature" Multiplicity="0..1" />
+          <End Type="EmployeeTrainingModel.tblTrainingHistory" Role="tblTrainingHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicSignature">
+              <PropertyRef Name="ElectronicSignatureId" />
+            </Principal>
+            <Dependent Role="tblTrainingHistory">
+              <PropertyRef Name="ElectronicSignatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblTrainingHistory_ElectronicSignatures_Active">
+          <End Type="EmployeeTrainingModel.ElectronicSignature" Role="ElectronicSignature" Multiplicity="0..1" />
+          <End Type="EmployeeTrainingModel.tblTrainingHistory" Role="tblTrainingHistory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ElectronicSignature">
+              <PropertyRef Name="ElectronicSignatureId" />
+            </Principal>
+            <Dependent Role="tblTrainingHistory">
+              <PropertyRef Name="ActiveTrainingElecronicSignatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeeTrainingModelStoreContainer" CdmEntityContainer="EmployeeTrainingEntities">
+          <EntitySetMapping Name="ChangeOrderRequiredTrainings">
+            <EntityTypeMapping TypeName="EmployeeTrainingModel.ChangeOrderRequiredTraining">
+              <MappingFragment StoreEntitySet="ChangeOrderRequiredTraining">
+                <ScalarProperty Name="ChangeOrderRequiredTrainingId" ColumnName="ChangeOrderRequiredTrainingId" />
+                <ScalarProperty Name="ChangeOrderNumber" ColumnName="ChangeOrderNumber" />
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+                <ScalarProperty Name="Revision" ColumnName="Revision" />
+                <ScalarProperty Name="RequiredTrainingLevel" ColumnName="RequiredTrainingLevel" />
+                <ScalarProperty Name="DueDateModifier" ColumnName="DueDateModifier" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Committed" ColumnName="Committed" />
+                <ScalarProperty Name="CreatedAtDateTime" ColumnName="CreatedAtDateTime" />
+                <ScalarProperty Name="CreatedByUser" ColumnName="CreatedByUser" />
+                <ScalarProperty Name="ModifiedAtDateTime" ColumnName="ModifiedAtDateTime" />
+                <ScalarProperty Name="ModifiedByUser" ColumnName="ModifiedByUser" />
+                <ScalarProperty Name="ModifiedReasonCode" ColumnName="ModifiedReasonCode" />
+                <ScalarProperty Name="ModifiedReasonOther" ColumnName="ModifiedReasonOther" />
+                <ScalarProperty Name="InactivatedAtDateTime" ColumnName="InactivatedAtDateTime" />
+                <ScalarProperty Name="InactivatedByUser" ColumnName="InactivatedByUser" />
+                <ScalarProperty Name="InactivatedReasonCode" ColumnName="InactivatedReasonCode" />
+                <ScalarProperty Name="InactivatedReasonOther" ColumnName="InactivatedReasonOther" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCurrentTrainingRequirements">
+            <EntityTypeMapping TypeName="EmployeeTrainingModel.tblCurrentTrainingRequirement">
+              <MappingFragment StoreEntitySet="tblCurrentTrainingRequirements">
+                <ScalarProperty Name="CurrentTrainingID" ColumnName="CurrentTrainingID" />
+                <ScalarProperty Name="Employee_number" ColumnName="Employee_number" />
+                <ScalarProperty Name="CurrentTrainingDocID" ColumnName="CurrentTrainingDocID" />
+                <ScalarProperty Name="EnteredDate" ColumnName="EnteredDate" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="AssignedByElectronicSignatureId" ColumnName="AssignedByElectronicSignatureId" />
+                <ScalarProperty Name="CurrentTrainingType" ColumnName="CurrentTrainingType" />
+                <ScalarProperty Name="Previous_Employee_Number" ColumnName="Previous_Employee_Number" />
+                <ScalarProperty Name="Employee_Number_UpdatedOn" ColumnName="Employee_Number_UpdatedOn" />
+                <ScalarProperty Name="Employee_Number_UpdatedBy" ColumnName="Employee_Number_UpdatedBy" />
+                <ScalarProperty Name="DeletedBy" ColumnName="DeletedBy" />
+                <ScalarProperty Name="DeletedByElectronicSignatureId" ColumnName="DeletedByElectronicSignatureId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblTrainingHistories">
+            <EntityTypeMapping TypeName="EmployeeTrainingModel.tblTrainingHistory">
+              <MappingFragment StoreEntitySet="tblTrainingHistory">
+                <ScalarProperty Name="TrainingHistoryID" ColumnName="TrainingHistoryID" />
+                <ScalarProperty Name="Employee_Number" ColumnName="Employee_Number" />
+                <ScalarProperty Name="TrainTitle" ColumnName="TrainTitle" />
+                <ScalarProperty Name="TrainDeptName" ColumnName="TrainDeptName" />
+                <ScalarProperty Name="TrainDeptNum" ColumnName="TrainDeptNum" />
+                <ScalarProperty Name="TrainDocID" ColumnName="TrainDocID" />
+                <ScalarProperty Name="TrainDocRev" ColumnName="TrainDocRev" />
+                <ScalarProperty Name="TrainValidatedByNumber" ColumnName="TrainValidatedByNumber" />
+                <ScalarProperty Name="TrainValidatedByFirstName" ColumnName="TrainValidatedByFirstName" />
+                <ScalarProperty Name="TrainValidatedByLastName" ColumnName="TrainValidatedByLastName" />
+                <ScalarProperty Name="TrainDate" ColumnName="TrainDate" />
+                <ScalarProperty Name="EnteredDate" ColumnName="EnteredDate" />
+                <ScalarProperty Name="EnteredBy" ColumnName="EnteredBy" />
+                <ScalarProperty Name="Previous_Employee_Number" ColumnName="Previous_Employee_Number" />
+                <ScalarProperty Name="Employee_Number_UpdatedOn" ColumnName="Employee_Number_UpdatedOn" />
+                <ScalarProperty Name="Employee_Number_UpdatedBy" ColumnName="Employee_Number_UpdatedBy" />
+                <ScalarProperty Name="ElectronicSignatureId" ColumnName="ElectronicSignatureId" />
+                <ScalarProperty Name="TrainingLevel" ColumnName="TrainingLevel" />
+                <ScalarProperty Name="ActiveTrainingApproval" ColumnName="ActiveTrainingApproval" />
+                <ScalarProperty Name="ActiveTrainingApprovedBy" ColumnName="ActiveTrainingApprovedBy" />
+                <ScalarProperty Name="ActiveTrainingApprovedOn" ColumnName="ActiveTrainingApprovedOn" />
+                <ScalarProperty Name="ActiveTrainingElecronicSignatureId" ColumnName="ActiveTrainingElecronicSignatureId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="xxatr_jobprocedure_tracking">
+            <EntityTypeMapping TypeName="EmployeeTrainingModel.xxatr_jobprocedure_tracking">
+              <MappingFragment StoreEntitySet="xxatr_jobprocedure_tracking">
+                <ScalarProperty Name="trackID" ColumnName="trackID" />
+                <ScalarProperty Name="employee_number" ColumnName="employee_number" />
+                <ScalarProperty Name="job_number" ColumnName="job_number" />
+                <ScalarProperty Name="job_type" ColumnName="job_type" />
+                <ScalarProperty Name="scanID" ColumnName="scanID" />
+                <ScalarProperty Name="bundle" ColumnName="bundle" />
+                <ScalarProperty Name="doc_ID" ColumnName="doc_ID" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="isTraining" ColumnName="isTraining" />
+                <ScalarProperty Name="recordedBy" ColumnName="recordedBy" />
+                <ScalarProperty Name="logoutDate" ColumnName="logoutDate" />
+                <ScalarProperty Name="trainerEmployeeId" ColumnName="trainerEmployeeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ElectronicSignatures">
+            <EntityTypeMapping TypeName="EmployeeTrainingModel.ElectronicSignature">
+              <MappingFragment StoreEntitySet="ElectronicSignatures">
+                <ScalarProperty Name="ExecutedPurpose" ColumnName="ExecutedPurpose" />
+                <ScalarProperty Name="ExecutedDateTime" ColumnName="ExecutedDateTime" />
+                <ScalarProperty Name="PasswordVerifiedDateTime" ColumnName="PasswordVerifiedDateTime" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ElectronicSignatureId" ColumnName="ElectronicSignatureId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="pExecuteElectronicSignature" FunctionName="EmployeeTrainingModel.Store.pExecuteElectronicSignature" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

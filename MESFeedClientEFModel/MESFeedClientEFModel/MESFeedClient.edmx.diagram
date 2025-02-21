@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="33b1a70daf144badb9c03c70dd1a448b" Name="Diagram1">
+        <EntityTypeShape EntityType="MESFeedClientModel.tblBundleFeedLog" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblDocumentFeedLog" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblInventoryFeedLog" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblItemFeedLog" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblRecordFeedLog" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblWorkOrderFeedLog" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblBlueMountainFeedLog" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblMEStoOracleInventoryLog" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblMEStoOracleItemLog" Width="1.5" PointX="9.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblMEStoOracleWorkOrderLog" Width="1.5" PointX="5.375" PointY="9.75" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblDownloadFeedLog" Width="1.5" PointX="7.375" PointY="9.75" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblUploadFeedLog" Width="1.5" PointX="9.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblMESControl" Width="1.5" PointX="0.75" PointY="10.75" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblMesLastTrainingActionTaken" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblBlueMountainOutbound" Width="2.75" PointX="13.375" PointY="4.5" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblServiceBusIntake" Width="2.625" PointX="16.75" PointY="0.625" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblServiceBusDtlSchedule" Width="2.25" PointX="11.375" PointY="8.75" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblServiceBusDtlWorkOrder" Width="2.25" PointX="9.375" PointY="12.75" />
+        <EntityTypeShape EntityType="MESFeedClientModel.tblServiceBusIntakeDtl" Width="2.25" PointX="12.375" PointY="12.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.33529.398
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MESFeedClientEFModel", "MESFeedClientEFModel\MESFeedClientEFModel.csproj", "{FC9D2B28-2B5D-4BC3-ABBC-9AD09FCB557C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC9D2B28-2B5D-4BC3-ABBC-9AD09FCB557C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC9D2B28-2B5D-4BC3-ABBC-9AD09FCB557C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC9D2B28-2B5D-4BC3-ABBC-9AD09FCB557C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC9D2B28-2B5D-4BC3-ABBC-9AD09FCB557C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6ECEDFF7-6FCD-4516-B3A3-D41BF15088F0}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 2
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://usmer-tfs001:8080/tfs/validatedsoftwarecollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MESFeedClientEFModel\\MESFeedClientEFModel.csproj
+		SccProjectName1 = MESFeedClientEFModel
+		SccLocalPath1 = MESFeedClientEFModel
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1223 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MESFeedClientModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblBlueMountainFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="EquipmentID" Type="nvarchar" MaxLength="50" />
+          <Property Name="EquipmentDescription" Type="nvarchar" MaxLength="250" />
+          <Property Name="EquipmentStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="NextCalibrationDueDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlRequest" Type="nvarchar(max)" />
+          <Property Name="XmlResponse" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblBlueMountainOutbound">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MessageID" Type="nvarchar" MaxLength="150" />
+          <Property Name="Xml" Type="xml" />
+          <Property Name="Response" Type="nvarchar(max)" />
+          <Property Name="CreationDate" Type="datetime" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="Synced" Type="bit" Nullable="false" />
+          <Property Name="SyncAttempt" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblBundleFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlRequest" Type="nvarchar(max)" />
+          <Property Name="XmlResponse" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblDocumentFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlRequest" Type="nvarchar(max)" />
+          <Property Name="XmlResponse" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblDownloadFeedLogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="RequestXml" Type="nvarchar(max)" />
+          <Property Name="Response" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblInventoryFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="InventoryLotName" Type="nvarchar" MaxLength="25" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ProducntRevision" Type="nvarchar" MaxLength="50" />
+          <Property Name="InventoryLocation" Type="nvarchar" MaxLength="50" />
+          <Property Name="InventoryQuantity" Type="int" />
+          <Property Name="ExpirationDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlRequest" Type="nvarchar(max)" />
+          <Property Name="XmlResponse" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblItemFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="150" />
+          <Property Name="ProductRevision" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="350" />
+          <Property Name="status" Type="nvarchar" MaxLength="150" />
+          <Property Name="ProductType" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProductFamilty" Type="nvarchar" MaxLength="100" />
+          <Property Name="StartQuantity" Type="int" />
+          <Property Name="StartQuantityUOM" Type="nvarchar" MaxLength="10" />
+          <Property Name="AttributeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AttributeDataType" Type="nvarchar" MaxLength="50" />
+          <Property Name="AttributeValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="AttributeIsExpression" Type="nvarchar" MaxLength="50" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlRequest" Type="nvarchar(max)" />
+          <Property Name="XmlResponse" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblMESControl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Interface" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastRunDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblMesLastTrainingActionTaken">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="EmployeeNumber" Type="nvarchar" MaxLength="12" />
+          <Property Name="DocumentNumber" Type="nvarchar" MaxLength="15" />
+          <Property Name="DocumentRevision" Type="nvarchar" MaxLength="5" />
+          <Property Name="LastModifiedDate" Type="datetime" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sync" Type="bit" Nullable="false" />
+          <Property Name="SyncAttempt" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblMEStoOracleInventoryLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlRequest" Type="nvarchar(max)" />
+          <Property Name="XmlResponse" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblMEStoOracleItemLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlRequest" Type="nvarchar(max)" />
+          <Property Name="XmlResponse" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblMEStoOracleWorkOrderLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlRequest" Type="nvarchar(max)" />
+          <Property Name="XmlResponse" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblRecordFeedLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlRequest" Type="nvarchar(max)" />
+          <Property Name="XmlResponse" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblServiceBusDtlSchedules">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MessageId" Type="nvarchar" MaxLength="150" />
+          <Property Name="SchedRowID" Type="int" />
+          <Property Name="M_AEScheduleType" Type="varchar" MaxLength="50" />
+          <Property Name="M_EVRTName" Type="varchar" MaxLength="50" />
+          <Property Name="M_EHEVID" Type="varchar" MaxLength="50" />
+          <Property Name="AEDueDate" Type="datetime" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblServiceBusDtlWorkOrders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MessageId" Type="nvarchar" MaxLength="150" />
+          <Property Name="WorkOrderRowID" Type="int" />
+          <Property Name="M_EHRTName" Type="varchar" MaxLength="50" />
+          <Property Name="M_EHHistoryID" Type="varchar" MaxLength="50" />
+          <Property Name="M_EHEVID" Type="varchar" MaxLength="50" />
+          <Property Name="EHStateName" Type="varchar" MaxLength="25" />
+          <Property Name="M_EHDueDate" Type="datetime" />
+          <Property Name="EHLastModified" Type="datetime" />
+          <Property Name="M_EH2_UDF15" Type="datetime" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblServiceBusIntake">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MessageId" Type="nvarchar" MaxLength="150" />
+          <Property Name="DeletedFromQueue" Type="bit" Nullable="false" />
+          <Property Name="DeadLettered" Type="bit" Nullable="false" />
+          <Property Name="DeadLetterReason" Type="nvarchar" MaxLength="150" />
+          <Property Name="DeadLetterSource" Type="nvarchar" MaxLength="150" />
+          <Property Name="DeadLetterErrorDescription" Type="nvarchar(max)" />
+          <Property Name="DeliveryCount" Type="int" />
+          <Property Name="ReplyTo" Type="nvarchar" MaxLength="150" />
+          <Property Name="State" Type="nvarchar" MaxLength="50" />
+          <Property Name="To" Type="nvarchar" MaxLength="50" />
+          <Property Name="Subject" Type="nvarchar" MaxLength="50" />
+          <Property Name="CorrelationId" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReplyToSessionId" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionId" Type="nvarchar" MaxLength="50" />
+          <Property Name="TransactionPartitionKey" Type="nvarchar" MaxLength="150" />
+          <Property Name="PartitionKey" Type="nvarchar" MaxLength="150" />
+          <Property Name="TimeToLive" Type="bigint" />
+          <Property Name="ExpiresAt" Type="datetimeoffset" Precision="7" />
+          <Property Name="EnqueuedTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="EnqueuedSequenceNumber" Type="bigint" />
+          <Property Name="SequenceNumber" Type="bigint" />
+          <Property Name="ScheduledEnqueueTime" Type="datetimeoffset" Precision="7" />
+          <Property Name="LockedUntil" Type="datetimeoffset" Precision="7" />
+          <Property Name="LockToken" Type="nvarchar" MaxLength="250" />
+          <Property Name="InboundXML" Type="xml" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tblServiceBusIntakeDtl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MessageId" Type="nvarchar" MaxLength="150" />
+          <Property Name="AHAssetID" Type="varchar" MaxLength="50" />
+          <Property Name="AHAssetDesc" Type="varchar" MaxLength="254" />
+          <Property Name="AHAssetStatus" Type="varchar" MaxLength="25" />
+          <Property Name="AHStateName" Type="varchar" MaxLength="25" />
+          <Property Name="AHLastModified" Type="datetime" />
+          <Property Name="AHScopeName" Type="varchar" MaxLength="50" />
+          <Property Name="CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" />
+          <Property Name="UpdateAction" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tblUploadFeedLogs">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="RequestXml" Type="nvarchar(max)" />
+          <Property Name="Response" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="tblWorkOrderFeedLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransactionID" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="TransactionDate" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="TransactionType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="MfgOrderName" Type="nvarchar" MaxLength="20" />
+          <Property Name="Description" Type="nvarchar" MaxLength="150" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="350" />
+          <Property Name="OrderStatus" Type="nvarchar" MaxLength="20" />
+          <Property Name="OrderType" Type="nvarchar" MaxLength="20" />
+          <Property Name="Factory" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="150" />
+          <Property Name="ProducntRevision" Type="nvarchar" MaxLength="50" />
+          <Property Name="Quantity" Type="int" />
+          <Property Name="UOM" Type="nvarchar" MaxLength="10" />
+          <Property Name="Priority" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReleaseDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="CompletionSubInventory" Type="nvarchar" MaxLength="30" />
+          <Property Name="PlannedStartDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="PlannedCompletionDate" Type="datetimeoffset" Precision="7" />
+          <Property Name="LotNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="MaterialProductName" Type="nvarchar" MaxLength="150" />
+          <Property Name="MaterialProductRevision" Type="nvarchar" MaxLength="50" />
+          <Property Name="IssueControl" Type="int" />
+          <Property Name="DefaultStockPullLocation" Type="nvarchar" MaxLength="100" />
+          <Property Name="ErpOperation" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuantityRequired" Type="int" />
+          <Property Name="AllowSubstitution" Type="bit" />
+          <Property Name="AllowUnderConsumption" Type="bit" />
+          <Property Name="AllowOverConsumption" Type="bit" />
+          <Property Name="AttributeName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AttributeDataType" Type="nvarchar" MaxLength="50" />
+          <Property Name="AttributeValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="AttributeIsExpression" Type="nvarchar" MaxLength="50" />
+          <Property Name="Action" Type="nvarchar" MaxLength="100" />
+          <Property Name="XmlRequest" Type="nvarchar(max)" />
+          <Property Name="XmlResponse" Type="nvarchar(max)" />
+        </EntityType>
+        <Function Name="spBundleDailyChangesGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spCheckCurrency" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spCheckExpiration" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spCheckLastActions" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="attempts" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spDocDailyChangesGet" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spGetBlueMountainAssets" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spLatestMESAction_Get" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spLatestMESAction_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+          <Parameter Name="sync" Type="bit" Mode="In" />
+          <Parameter Name="attempt" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spQueueNewUsers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spSyncMESQueue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="emp" Type="varchar" Mode="In" />
+          <Parameter Name="doc" Type="varchar" Mode="In" />
+          <Parameter Name="sync" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="spTrainingActionBackFeed" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spUpdateMESQueue" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="MESFeedClientModelStoreContainer">
+          <EntitySet Name="tblBlueMountainFeedLog" EntityType="Self.tblBlueMountainFeedLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBlueMountainOutbound" EntityType="Self.tblBlueMountainOutbound" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblBundleFeedLog" EntityType="Self.tblBundleFeedLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDocumentFeedLog" EntityType="Self.tblDocumentFeedLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblDownloadFeedLogs" EntityType="Self.tblDownloadFeedLogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblInventoryFeedLog" EntityType="Self.tblInventoryFeedLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblItemFeedLog" EntityType="Self.tblItemFeedLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMESControl" EntityType="Self.tblMESControl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMesLastTrainingActionTaken" EntityType="Self.tblMesLastTrainingActionTaken" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMEStoOracleInventoryLog" EntityType="Self.tblMEStoOracleInventoryLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMEStoOracleItemLog" EntityType="Self.tblMEStoOracleItemLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblMEStoOracleWorkOrderLog" EntityType="Self.tblMEStoOracleWorkOrderLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblRecordFeedLog" EntityType="Self.tblRecordFeedLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblServiceBusDtlSchedules" EntityType="Self.tblServiceBusDtlSchedules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblServiceBusDtlWorkOrders" EntityType="Self.tblServiceBusDtlWorkOrders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblServiceBusIntake" EntityType="Self.tblServiceBusIntake" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblServiceBusIntakeDtl" EntityType="Self.tblServiceBusIntakeDtl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUploadFeedLogs" EntityType="Self.tblUploadFeedLogs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblWorkOrderFeedLog" EntityType="Self.tblWorkOrderFeedLog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MESFeedClientModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblBundleFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblDocumentFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblInventoryFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="InventoryLotName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProducntRevision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InventoryLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InventoryQuantity" Type="Int32" />
+          <Property Name="ExpirationDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblItemFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProductType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProductFamilty" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="StartQuantity" Type="Int32" />
+          <Property Name="StartQuantityUOM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="AttributeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AttributeDataType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AttributeValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AttributeIsExpression" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductRevision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblRecordFeedLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblWorkOrderFeedLog">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MfgOrderName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="350" FixedLength="false" Unicode="true" />
+          <Property Name="OrderStatus" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="OrderType" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Factory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProductRevision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="Int32" />
+          <Property Name="UOM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Priority" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReleaseDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="CompletionSubInventory" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="PlannedStartDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="PlannedCompletionDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="LotNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialProductName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="MaterialProductRevision" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IssueControl" Type="Int32" />
+          <Property Name="DefaultStockPullLocation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ErpOperation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuantityRequired" Type="Int32" />
+          <Property Name="AllowSubstitution" Type="Boolean" />
+          <Property Name="AllowUnderConsumption" Type="Boolean" />
+          <Property Name="AllowOverConsumption" Type="Boolean" />
+          <Property Name="AttributeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AttributeDataType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AttributeValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AttributeIsExpression" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="MESFeedClientEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblBundleFeedLogs" EntityType="Self.tblBundleFeedLog" />
+          <EntitySet Name="tblDocumentFeedLogs" EntityType="Self.tblDocumentFeedLog" />
+          <EntitySet Name="tblInventoryFeedLogs" EntityType="Self.tblInventoryFeedLog" />
+          <EntitySet Name="tblItemFeedLogs" EntityType="Self.tblItemFeedLog" />
+          <EntitySet Name="tblRecordFeedLogs" EntityType="Self.tblRecordFeedLog" />
+          <EntitySet Name="tblWorkOrderFeedLogs" EntityType="Self.tblWorkOrderFeedLog" />
+          <EntitySet Name="tblBlueMountainFeedLogs" EntityType="MESFeedClientModel.tblBlueMountainFeedLog" />
+          <EntitySet Name="tblMEStoOracleInventoryLogs" EntityType="MESFeedClientModel.tblMEStoOracleInventoryLog" />
+          <EntitySet Name="tblMEStoOracleItemLogs" EntityType="MESFeedClientModel.tblMEStoOracleItemLog" />
+          <EntitySet Name="tblMEStoOracleWorkOrderLogs" EntityType="MESFeedClientModel.tblMEStoOracleWorkOrderLog" />
+          <EntitySet Name="tblDownloadFeedLogs" EntityType="MESFeedClientModel.tblDownloadFeedLog" />
+          <EntitySet Name="tblUploadFeedLogs" EntityType="MESFeedClientModel.tblUploadFeedLog" />
+          <FunctionImport Name="spLatestMESAction_Get" />
+          <FunctionImport Name="spLatestMESAction_Update">
+            <Parameter Name="id" Mode="In" Type="Int32" />
+            <Parameter Name="sync" Mode="In" Type="Boolean" />
+            <Parameter Name="attempt" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spCheckLastActionsForCurrency" >
+            <Parameter Name="attempts" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spCheckCurrency" ReturnType="Collection(MESFeedClientModel.spCheckCurrency_Result)" />
+          <FunctionImport Name="spUpdateMESQueue" />
+          <FunctionImport Name="spCheckExpiration" ReturnType="Collection(MESFeedClientModel.spCheckExpiration_Result)" />
+          <EntitySet Name="tblMESControls" EntityType="MESFeedClientModel.tblMESControl" />
+          <EntitySet Name="tblMesLastTrainingActionTakens" EntityType="MESFeedClientModel.tblMesLastTrainingActionTaken" />
+          <FunctionImport Name="spSyncMESQueue">
+            <Parameter Name="emp" Mode="In" Type="String" />
+            <Parameter Name="doc" Mode="In" Type="String" />
+            <Parameter Name="sync" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="spQueueNewUsers" />
+          <FunctionImport Name="spBundleDailyChangesGet" ReturnType="Collection(MESFeedClientModel.spBundleDailyChangesGet_Result)" />
+          <FunctionImport Name="spDocDailyChangesGet" ReturnType="Collection(MESFeedClientModel.spDocDailyChangesGet_Result)" />
+          <FunctionImport Name="spCheckLastActions" ReturnType="Collection(MESFeedClientModel.spCheckLastActions_Result)">
+          <Parameter Name="attempts" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spTrainingActionBackFeed" />
+          <EntitySet Name="tblBlueMountainOutbounds" EntityType="MESFeedClientModel.tblBlueMountainOutbound" />
+          <EntitySet Name="tblServiceBusIntakes" EntityType="MESFeedClientModel.tblServiceBusIntake" />
+          <FunctionImport Name="spGetBlueMountainAssets" ReturnType="Collection(MESFeedClientModel.spGetBlueMountainAssets_Result)" />
+          <EntitySet Name="tblServiceBusDtlSchedules" EntityType="MESFeedClientModel.tblServiceBusDtlSchedule" />
+          <EntitySet Name="tblServiceBusDtlWorkOrders" EntityType="MESFeedClientModel.tblServiceBusDtlWorkOrder" />
+          <EntitySet Name="tblServiceBusIntakeDtls" EntityType="MESFeedClientModel.tblServiceBusIntakeDtl" />
+        </EntityContainer>
+        <EntityType Name="tblBlueMountainFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EquipmentID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EquipmentDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="EquipmentStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NextCalibrationDueDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblMEStoOracleInventoryLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblMEStoOracleItemLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblMEStoOracleWorkOrderLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="TransactionType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="XmlRequest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="XmlResponse" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblDownloadFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RequestXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Response" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tblUploadFeedLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransactionID" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionDate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="TransactionType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Action" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="RequestXml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Response" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="spCheckCurrency_Result">
+          <Property Type="String" Name="EmployeeNumber" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="UNumber" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FIRST_NAME" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="LAST_NAME" Nullable="true" MaxLength="200" />
+          <Property Type="String" Name="DocumentNumber" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="DocumentRevision" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="LastModifiedDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="TrainingStatus" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Boolean" Name="sync" Nullable="true" />
+          <Property Type="Int32" Name="SyncAttempt" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="tblMESControl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Interface" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastRunDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblMesLastTrainingActionTaken">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="EmployeeNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="DocumentNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="DocumentRevision" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="LastModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sync" Type="Boolean" Nullable="false" />
+          <Property Name="SyncAttempt" Type="Int32" Nullable="false" />
+        </EntityType>
+        <ComplexType Name="spBundleDailyChangesGet_Result">
+          <Property Type="String" Name="TrainingRequirementGroupName" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="Description" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="Document" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="DocCurrentRev" Nullable="true" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="spDocDailyChangesGet_Result">
+          <Property Type="String" Name="DocID" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="DocDesc" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="DocPath" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="DocCurrentRev" Nullable="true" MaxLength="5" />
+        </ComplexType>
+        <ComplexType Name="spCheckExpiration_Result">
+          <Property Type="String" Name="EmployeeNumber" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="UNumber" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="FIRST_NAME" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="LAST_NAME" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="DocumentNumber" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="DocumentRevision" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="LastModifiedDate" Nullable="false" Precision="23" />
+          <Property Type="String" Name="TrainingStatus" Nullable="false" MaxLength="10" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Boolean" Name="sync" Nullable="true" />
+          <Property Type="Int32" Name="SyncAttempt" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="spCheckLastActions_Result">
+          <Property Type="String" Name="EmployeeNumber" Nullable="false" MaxLength="20" />
+          <Property Type="String" Name="EMAIL_ADDRESS" Nullable="true" MaxLength="240" />
+          <Property Type="String" Name="FIRST_NAME" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="LAST_NAME" Nullable="false" MaxLength="150" />
+          <Property Type="String" Name="DocumentNumber" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="DocumentRevision" Nullable="true" MaxLength="5" />
+          <Property Type="DateTime" Name="LastModifiedDate" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="Boolean" Name="sync" Nullable="false" />
+          <Property Type="Int32" Name="SyncAttempt" Nullable="false" />
+          <Property Type="String" Name="TrainingStatus" Nullable="false" MaxLength="10" />
+        </ComplexType>
+        <EntityType Name="tblBlueMountainOutbound">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="MessageID" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="Xml" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Response" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreationDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="Synced" Type="Boolean" Nullable="false" />
+          <Property Name="SyncAttempt" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblServiceBusIntake">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="DeletedFromQueue" Type="Boolean" Nullable="false" />
+          <Property Name="DeadLettered" Type="Boolean" Nullable="false" />
+          <Property Name="DeadLetterReason" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DeadLetterSource" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="DeadLetterErrorDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DeliveryCount" Type="Int32" />
+          <Property Name="ReplyTo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="To" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Subject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CorrelationId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReplyToSessionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SessionId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TransactionPartitionKey" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PartitionKey" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="TimeToLive" Type="Int64" />
+          <Property Name="ExpiresAt" Type="DateTimeOffset" Precision="7" />
+          <Property Name="EnqueuedTime" Type="DateTimeOffset" Precision="7" />
+          <Property Name="EnqueuedSequenceNumber" Type="Int64" />
+          <Property Name="SequenceNumber" Type="Int64" />
+          <Property Name="ScheduledEnqueueTime" Type="DateTimeOffset" Precision="7" />
+          <Property Name="LockedUntil" Type="DateTimeOffset" Precision="7" />
+          <Property Name="LockToken" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="InboundXML" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="MessageId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <ComplexType Name="spGetBlueMountainAssets_Result">
+          <Property Type="String" Name="MessageId" Nullable="true" MaxLength="150" />
+          <Property Type="String" Name="AHAssetID" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="AHAssetDesc" Nullable="true" MaxLength="254" />
+          <Property Type="String" Name="AHAssetStatus" Nullable="true" MaxLength="25" />
+          <Property Type="String" Name="AHStateName" Nullable="true" MaxLength="25" />
+          <Property Type="DateTime" Name="AENextDueDate" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="lastModDate" Nullable="true" Precision="23" />
+        </ComplexType>
+        <EntityType Name="tblServiceBusDtlSchedule">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MessageId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="SchedRowID" Type="Int32" />
+          <Property Name="M_AEScheduleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="M_EVRTName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="M_EHEVID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AEDueDate" Type="DateTime" Precision="3" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblServiceBusDtlWorkOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MessageId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="WorkOrderRowID" Type="Int32" />
+          <Property Name="M_EHRTName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="M_EHHistoryID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="M_EHEVID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EHStateName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="M_EHDueDate" Type="DateTime" Precision="3" />
+          <Property Name="EHLastModified" Type="DateTime" Precision="3" />
+          <Property Name="M_EH2_UDF15" Type="DateTime" Precision="3" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tblServiceBusIntakeDtl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MessageId" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AHAssetID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AHAssetDesc" Type="String" MaxLength="254" FixedLength="false" Unicode="false" />
+          <Property Name="AHAssetStatus" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="AHStateName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="AHLastModified" Type="DateTime" Precision="3" />
+          <Property Name="AHScopeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdateAction" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MESFeedClientModelStoreContainer" CdmEntityContainer="MESFeedClientEntities">
+          <EntitySetMapping Name="tblBundleFeedLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblBundleFeedLog">
+              <MappingFragment StoreEntitySet="tblBundleFeedLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+                <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDocumentFeedLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblDocumentFeedLog">
+              <MappingFragment StoreEntitySet="tblDocumentFeedLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+                <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblInventoryFeedLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblInventoryFeedLog">
+              <MappingFragment StoreEntitySet="tblInventoryFeedLog">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="InventoryLotName" ColumnName="InventoryLotName" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProducntRevision" ColumnName="ProducntRevision" />
+                <ScalarProperty Name="InventoryLocation" ColumnName="InventoryLocation" />
+                <ScalarProperty Name="InventoryQuantity" ColumnName="InventoryQuantity" />
+                <ScalarProperty Name="ExpirationDate" ColumnName="ExpirationDate" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+                <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblItemFeedLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblItemFeedLog">
+              <MappingFragment StoreEntitySet="tblItemFeedLog">
+                <ScalarProperty Name="ProductRevision" ColumnName="ProductRevision" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductFamilty" ColumnName="ProductFamilty" />
+                <ScalarProperty Name="StartQuantity" ColumnName="StartQuantity" />
+                <ScalarProperty Name="StartQuantityUOM" ColumnName="StartQuantityUOM" />
+                <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+                <ScalarProperty Name="AttributeDataType" ColumnName="AttributeDataType" />
+                <ScalarProperty Name="AttributeValue" ColumnName="AttributeValue" />
+                <ScalarProperty Name="AttributeIsExpression" ColumnName="AttributeIsExpression" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+                <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblRecordFeedLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblRecordFeedLog">
+              <MappingFragment StoreEntitySet="tblRecordFeedLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+                <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblWorkOrderFeedLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblWorkOrderFeedLog">
+              <MappingFragment StoreEntitySet="tblWorkOrderFeedLog">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="MfgOrderName" ColumnName="MfgOrderName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="Factory" ColumnName="Factory" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductRevision" ColumnName="ProducntRevision" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UOM" ColumnName="UOM" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="CompletionSubInventory" ColumnName="CompletionSubInventory" />
+                <ScalarProperty Name="PlannedStartDate" ColumnName="PlannedStartDate" />
+                <ScalarProperty Name="PlannedCompletionDate" ColumnName="PlannedCompletionDate" />
+                <ScalarProperty Name="LotNumber" ColumnName="LotNumber" />
+                <ScalarProperty Name="MaterialProductName" ColumnName="MaterialProductName" />
+                <ScalarProperty Name="MaterialProductRevision" ColumnName="MaterialProductRevision" />
+                <ScalarProperty Name="IssueControl" ColumnName="IssueControl" />
+                <ScalarProperty Name="DefaultStockPullLocation" ColumnName="DefaultStockPullLocation" />
+                <ScalarProperty Name="ErpOperation" ColumnName="ErpOperation" />
+                <ScalarProperty Name="QuantityRequired" ColumnName="QuantityRequired" />
+                <ScalarProperty Name="AllowSubstitution" ColumnName="AllowSubstitution" />
+                <ScalarProperty Name="AllowUnderConsumption" ColumnName="AllowUnderConsumption" />
+                <ScalarProperty Name="AllowOverConsumption" ColumnName="AllowOverConsumption" />
+                <ScalarProperty Name="AttributeName" ColumnName="AttributeName" />
+                <ScalarProperty Name="AttributeDataType" ColumnName="AttributeDataType" />
+                <ScalarProperty Name="AttributeValue" ColumnName="AttributeValue" />
+                <ScalarProperty Name="AttributeIsExpression" ColumnName="AttributeIsExpression" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+                <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBlueMountainFeedLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblBlueMountainFeedLog">
+              <MappingFragment StoreEntitySet="tblBlueMountainFeedLog">
+                <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+                <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="NextCalibrationDueDate" ColumnName="NextCalibrationDueDate" />
+                <ScalarProperty Name="EquipmentStatus" ColumnName="EquipmentStatus" />
+                <ScalarProperty Name="EquipmentDescription" ColumnName="EquipmentDescription" />
+                <ScalarProperty Name="EquipmentID" ColumnName="EquipmentID" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMEStoOracleInventoryLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblMEStoOracleInventoryLog">
+              <MappingFragment StoreEntitySet="tblMEStoOracleInventoryLog">
+                <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+                <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMEStoOracleItemLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblMEStoOracleItemLog">
+              <MappingFragment StoreEntitySet="tblMEStoOracleItemLog">
+                <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+                <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMEStoOracleWorkOrderLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblMEStoOracleWorkOrderLog">
+              <MappingFragment StoreEntitySet="tblMEStoOracleWorkOrderLog">
+                <ScalarProperty Name="XmlResponse" ColumnName="XmlResponse" />
+                <ScalarProperty Name="XmlRequest" ColumnName="XmlRequest" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDownloadFeedLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblDownloadFeedLog">
+              <MappingFragment StoreEntitySet="tblDownloadFeedLogs">
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="RequestXml" ColumnName="RequestXml" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUploadFeedLogs">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblUploadFeedLog">
+              <MappingFragment StoreEntitySet="tblUploadFeedLogs">
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="RequestXml" ColumnName="RequestXml" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+                <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+                <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spLatestMESAction_Get" FunctionName="MESFeedClientModel.Store.spLatestMESAction_Get" />
+          <FunctionImportMapping FunctionImportName="spLatestMESAction_Update" FunctionName="MESFeedClientModel.Store.spLatestMESAction_Update" />
+          <FunctionImportMapping FunctionImportName="spCheckCurrency" FunctionName="MESFeedClientModel.Store.spCheckCurrency">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MESFeedClientModel.spCheckCurrency_Result">
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+                <ScalarProperty Name="UNumber" ColumnName="UNumber" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+                <ScalarProperty Name="DocumentRevision" ColumnName="DocumentRevision" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="TrainingStatus" ColumnName="TrainingStatus" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="sync" ColumnName="sync" />
+                <ScalarProperty Name="SyncAttempt" ColumnName="SyncAttempt" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spUpdateMESQueue" FunctionName="MESFeedClientModel.Store.spUpdateMESQueue" />
+          <FunctionImportMapping FunctionImportName="spCheckExpiration" FunctionName="MESFeedClientModel.Store.spCheckExpiration" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MESFeedClientModel.spCheckExpiration_Result">
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+                <ScalarProperty Name="UNumber" ColumnName="UNumber" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+                <ScalarProperty Name="DocumentRevision" ColumnName="DocumentRevision" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="TrainingStatus" ColumnName="TrainingStatus" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="sync" ColumnName="sync" />
+                <ScalarProperty Name="SyncAttempt" ColumnName="SyncAttempt" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tblMESControls">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblMESControl">
+              <MappingFragment StoreEntitySet="tblMESControl">
+                <ScalarProperty Name="LastRunDate" ColumnName="LastRunDate" />
+                <ScalarProperty Name="Interface" ColumnName="Interface" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMesLastTrainingActionTakens">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblMesLastTrainingActionTaken">
+              <MappingFragment StoreEntitySet="tblMesLastTrainingActionTaken">
+                <ScalarProperty Name="SyncAttempt" ColumnName="SyncAttempt" />
+                <ScalarProperty Name="sync" ColumnName="sync" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="DocumentRevision" ColumnName="DocumentRevision" />
+                <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spSyncMESQueue" FunctionName="MESFeedClientModel.Store.spSyncMESQueue" />
+          <FunctionImportMapping FunctionImportName="spQueueNewUsers" FunctionName="MESFeedClientModel.Store.spQueueNewUsers" />
+          <FunctionImportMapping FunctionImportName="spBundleDailyChangesGet" FunctionName="MESFeedClientModel.Store.spBundleDailyChangesGet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MESFeedClientModel.spBundleDailyChangesGet_Result">
+                <ScalarProperty Name="TrainingRequirementGroupName" ColumnName="TrainingRequirementGroupName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="DocCurrentRev" ColumnName="DocCurrentRev" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spDocDailyChangesGet" FunctionName="MESFeedClientModel.Store.spDocDailyChangesGet">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MESFeedClientModel.spDocDailyChangesGet_Result">
+                <ScalarProperty Name="DocID" ColumnName="DocID" />
+                <ScalarProperty Name="DocDesc" ColumnName="DocDesc" />
+                <ScalarProperty Name="DocPath" ColumnName="DocPath" />
+                <ScalarProperty Name="DocCurrentRev" ColumnName="DocCurrentRev" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spCheckLastActions" FunctionName="MESFeedClientModel.Store.spCheckLastActions" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MESFeedClientModel.spCheckLastActions_Result">
+                <ScalarProperty Name="EmployeeNumber" ColumnName="EmployeeNumber" />
+                <ScalarProperty Name="EMAIL_ADDRESS" ColumnName="EMAIL_ADDRESS" />
+                <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+                <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+                <ScalarProperty Name="DocumentNumber" ColumnName="DocumentNumber" />
+                <ScalarProperty Name="DocumentRevision" ColumnName="DocumentRevision" />
+                <ScalarProperty Name="LastModifiedDate" ColumnName="LastModifiedDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="sync" ColumnName="sync" />
+                <ScalarProperty Name="SyncAttempt" ColumnName="SyncAttempt" />
+                <ScalarProperty Name="TrainingStatus" ColumnName="TrainingStatus" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spTrainingActionBackFeed" FunctionName="MESFeedClientModel.Store.spTrainingActionBackFeed" />
+          <EntitySetMapping Name="tblBlueMountainOutbounds">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblBlueMountainOutbound">
+              <MappingFragment StoreEntitySet="tblBlueMountainOutbound">
+                <ScalarProperty Name="SyncAttempt" ColumnName="SyncAttempt" />
+                <ScalarProperty Name="Synced" ColumnName="Synced" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Response" ColumnName="Response" />
+                <ScalarProperty Name="Xml" ColumnName="Xml" />
+                <ScalarProperty Name="MessageID" ColumnName="MessageID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblServiceBusIntakes">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblServiceBusIntake">
+              <MappingFragment StoreEntitySet="tblServiceBusIntake">
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="InboundXML" ColumnName="InboundXML" />
+                <ScalarProperty Name="LockToken" ColumnName="LockToken" />
+                <ScalarProperty Name="LockedUntil" ColumnName="LockedUntil" />
+                <ScalarProperty Name="ScheduledEnqueueTime" ColumnName="ScheduledEnqueueTime" />
+                <ScalarProperty Name="SequenceNumber" ColumnName="SequenceNumber" />
+                <ScalarProperty Name="EnqueuedSequenceNumber" ColumnName="EnqueuedSequenceNumber" />
+                <ScalarProperty Name="EnqueuedTime" ColumnName="EnqueuedTime" />
+                <ScalarProperty Name="ExpiresAt" ColumnName="ExpiresAt" />
+                <ScalarProperty Name="TimeToLive" ColumnName="TimeToLive" />
+                <ScalarProperty Name="PartitionKey" ColumnName="PartitionKey" />
+                <ScalarProperty Name="TransactionPartitionKey" ColumnName="TransactionPartitionKey" />
+                <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+                <ScalarProperty Name="ReplyToSessionId" ColumnName="ReplyToSessionId" />
+                <ScalarProperty Name="CorrelationId" ColumnName="CorrelationId" />
+                <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ReplyTo" ColumnName="ReplyTo" />
+                <ScalarProperty Name="DeliveryCount" ColumnName="DeliveryCount" />
+                <ScalarProperty Name="DeadLetterErrorDescription" ColumnName="DeadLetterErrorDescription" />
+                <ScalarProperty Name="DeadLetterSource" ColumnName="DeadLetterSource" />
+                <ScalarProperty Name="DeadLetterReason" ColumnName="DeadLetterReason" />
+                <ScalarProperty Name="DeadLettered" ColumnName="DeadLettered" />
+                <ScalarProperty Name="DeletedFromQueue" ColumnName="DeletedFromQueue" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spGetBlueMountainAssets" FunctionName="MESFeedClientModel.Store.spGetBlueMountainAssets">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MESFeedClientModel.spGetBlueMountainAssets_Result">
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="AHAssetID" ColumnName="AHAssetID" />
+                <ScalarProperty Name="AHAssetDesc" ColumnName="AHAssetDesc" />
+                <ScalarProperty Name="AHAssetStatus" ColumnName="AHAssetStatus" />
+                <ScalarProperty Name="AHStateName" ColumnName="AHStateName" />
+                <ScalarProperty Name="AENextDueDate" ColumnName="AENextDueDate" />
+                <ScalarProperty Name="lastModDate" ColumnName="lastModDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="tblServiceBusDtlSchedules">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblServiceBusDtlSchedule">
+              <MappingFragment StoreEntitySet="tblServiceBusDtlSchedules">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="AEDueDate" ColumnName="AEDueDate" />
+                <ScalarProperty Name="M_EHEVID" ColumnName="M_EHEVID" />
+                <ScalarProperty Name="M_EVRTName" ColumnName="M_EVRTName" />
+                <ScalarProperty Name="M_AEScheduleType" ColumnName="M_AEScheduleType" />
+                <ScalarProperty Name="SchedRowID" ColumnName="SchedRowID" />
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblServiceBusDtlWorkOrders">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblServiceBusDtlWorkOrder">
+              <MappingFragment StoreEntitySet="tblServiceBusDtlWorkOrders">
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="M_EH2_UDF15" ColumnName="M_EH2_UDF15" />
+                <ScalarProperty Name="EHLastModified" ColumnName="EHLastModified" />
+                <ScalarProperty Name="M_EHDueDate" ColumnName="M_EHDueDate" />
+                <ScalarProperty Name="EHStateName" ColumnName="EHStateName" />
+                <ScalarProperty Name="M_EHEVID" ColumnName="M_EHEVID" />
+                <ScalarProperty Name="M_EHHistoryID" ColumnName="M_EHHistoryID" />
+                <ScalarProperty Name="M_EHRTName" ColumnName="M_EHRTName" />
+                <ScalarProperty Name="WorkOrderRowID" ColumnName="WorkOrderRowID" />
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblServiceBusIntakeDtls">
+            <EntityTypeMapping TypeName="MESFeedClientModel.tblServiceBusIntakeDtl">
+              <MappingFragment StoreEntitySet="tblServiceBusIntakeDtl">
+                <ScalarProperty Name="UpdateAction" ColumnName="UpdateAction" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="AHScopeName" ColumnName="AHScopeName" />
+                <ScalarProperty Name="AHLastModified" ColumnName="AHLastModified" />
+                <ScalarProperty Name="AHStateName" ColumnName="AHStateName" />
+                <ScalarProperty Name="AHAssetStatus" ColumnName="AHAssetStatus" />
+                <ScalarProperty Name="AHAssetDesc" ColumnName="AHAssetDesc" />
+                <ScalarProperty Name="AHAssetID" ColumnName="AHAssetID" />
+                <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

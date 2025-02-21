@@ -1,0 +1,36 @@
+﻿CREATE TABLE [dbo].[tblServiceBusIntake]
+(
+	[Id] INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	[MessageId] nvarchar(150) null, 
+	--[Topic] varchar(50) NULL,
+	--[Subscription] varchar(150) NULL,
+	
+	[DeletedFromQueue] bit NOT NULL DEFAULT 0,
+	[DeadLettered] bit Not null default 0,
+	[DeadLetterReason] nvarchar(150) null,
+	[DeadLetterSource] nvarchar(150) null,
+	[DeadLetterErrorDescription] nvarchar(max),
+	[DeliveryCount] int null,
+	[ReplyTo] nvarchar(150) null,
+	[State] nvarchar(50) null,
+	[To] nvarchar(50) null,
+	[Subject] nvarchar(50) null,
+	[CorrelationId] nvarchar(50) null,
+	[ReplyToSessionId] nvarchar(50) null,
+	[SessionId] nvarchar(50) null,
+	[TransactionPartitionKey] nvarchar(150) null,
+	[PartitionKey] nvarchar(150) null,
+	[TimeToLive] BIGINT null,
+	[ExpiresAt] datetimeoffset null,
+	[EnqueuedTime] datetimeoffset null,
+	[EnqueuedSequenceNumber] bigint null,
+	[SequenceNumber] bigint null,
+	[ScheduledEnqueueTime] datetimeoffset null,
+	[LockedUntil] datetimeoffset null,
+	[LockToken] nvarchar(250) null,
+
+	[InboundXML] xml NULL,
+	[CreationDate] datetime NOT NULL,
+	[UpdateDate] datetime NULL, 
+    --CONSTRAINT [AK_tblServiceBusIntake_MessageId] UNIQUE ([MessageId])
+)

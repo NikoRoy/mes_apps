@@ -1,0 +1,124 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2017
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientUnitTests", "ClientUnitTests\ClientUnitTests.csproj", "{46EE9557-0649-400E-BFBA-3C91AA5D241D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocumentFeedClient", "DocumentFeedClient\DocumentFeedClient.csproj", "{3DC486BD-60E8-4843-89EE-A486D05767BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleMESFeedClient", "OracleMESFeedClient\OracleMESFeedClient.csproj", "{47BD9055-06E0-4C5D-BD7C-87D7481018AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueMountainFeedClient", "BlueMountainFeedClient\BlueMountainFeedClient.csproj", "{54DB534F-B422-41DF-8791-71A56BFC1887}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingBundleFeedClient", "TrainingBundleFeedClient\TrainingBundleFeedClient.csproj", "{8A1B22EC-713E-491D-9E64-D07974B5CA96}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainingRecordFeedClient", "TrainingRecordFeedClient\TrainingRecordFeedClient.csproj", "{AA0EBDB2-FEC6-4F48-9A1E-DF6BFDE4C49F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KronosFeedClient", "KronosFeedClient\KronosFeedClient.csproj", "{3656E7D8-C266-407F-8DB2-25E417CFC06B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleWorkOrderFeedClient", "OracleWorkOrderFeedClient\OracleWorkOrderFeedClient.csproj", "{1C6CAFC5-F6A1-4923-A8A9-7364688054CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OracleInventoryFeedClient", "OracleInventoryFeedClient\OracleInventoryFeedClient.csproj", "{7267F009-8E89-413D-BB1B-97DA990662E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NightlyTrainingRecordFeedClient", "NightlyTrainingRecordFeedClient\NightlyTrainingRecordFeedClient.csproj", "{B1726936-14D9-421C-9146-25090CD319C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MESFeedClientLibrary", "..\MESFeeds\MESFeedClientLibrary\MESFeedClientLibrary.csproj", "{953CD3E0-8A84-4DAA-8B29-0DED9F66CA69}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46EE9557-0649-400E-BFBA-3C91AA5D241D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46EE9557-0649-400E-BFBA-3C91AA5D241D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46EE9557-0649-400E-BFBA-3C91AA5D241D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46EE9557-0649-400E-BFBA-3C91AA5D241D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC486BD-60E8-4843-89EE-A486D05767BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC486BD-60E8-4843-89EE-A486D05767BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC486BD-60E8-4843-89EE-A486D05767BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC486BD-60E8-4843-89EE-A486D05767BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47BD9055-06E0-4C5D-BD7C-87D7481018AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47BD9055-06E0-4C5D-BD7C-87D7481018AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47BD9055-06E0-4C5D-BD7C-87D7481018AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47BD9055-06E0-4C5D-BD7C-87D7481018AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54DB534F-B422-41DF-8791-71A56BFC1887}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54DB534F-B422-41DF-8791-71A56BFC1887}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54DB534F-B422-41DF-8791-71A56BFC1887}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54DB534F-B422-41DF-8791-71A56BFC1887}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A1B22EC-713E-491D-9E64-D07974B5CA96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A1B22EC-713E-491D-9E64-D07974B5CA96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A1B22EC-713E-491D-9E64-D07974B5CA96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A1B22EC-713E-491D-9E64-D07974B5CA96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA0EBDB2-FEC6-4F48-9A1E-DF6BFDE4C49F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA0EBDB2-FEC6-4F48-9A1E-DF6BFDE4C49F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA0EBDB2-FEC6-4F48-9A1E-DF6BFDE4C49F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA0EBDB2-FEC6-4F48-9A1E-DF6BFDE4C49F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3656E7D8-C266-407F-8DB2-25E417CFC06B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3656E7D8-C266-407F-8DB2-25E417CFC06B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3656E7D8-C266-407F-8DB2-25E417CFC06B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3656E7D8-C266-407F-8DB2-25E417CFC06B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C6CAFC5-F6A1-4923-A8A9-7364688054CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C6CAFC5-F6A1-4923-A8A9-7364688054CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C6CAFC5-F6A1-4923-A8A9-7364688054CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C6CAFC5-F6A1-4923-A8A9-7364688054CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7267F009-8E89-413D-BB1B-97DA990662E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7267F009-8E89-413D-BB1B-97DA990662E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7267F009-8E89-413D-BB1B-97DA990662E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7267F009-8E89-413D-BB1B-97DA990662E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1726936-14D9-421C-9146-25090CD319C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1726936-14D9-421C-9146-25090CD319C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1726936-14D9-421C-9146-25090CD319C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1726936-14D9-421C-9146-25090CD319C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{953CD3E0-8A84-4DAA-8B29-0DED9F66CA69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953CD3E0-8A84-4DAA-8B29-0DED9F66CA69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953CD3E0-8A84-4DAA-8B29-0DED9F66CA69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953CD3E0-8A84-4DAA-8B29-0DED9F66CA69}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB700393-1A33-4A0B-A51B-C213C045BE8D}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 12
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://usmer-tfs001:8080/tfs/validatedsoftwarecollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = BlueMountainFeedClient\\BlueMountainFeedClient.csproj
+		SccProjectName1 = BlueMountainFeedClient
+		SccLocalPath1 = BlueMountainFeedClient
+		SccProjectUniqueName2 = ClientUnitTests\\ClientUnitTests.csproj
+		SccProjectName2 = ClientUnitTests
+		SccLocalPath2 = ClientUnitTests
+		SccProjectUniqueName3 = DocumentFeedClient\\DocumentFeedClient.csproj
+		SccProjectName3 = DocumentFeedClient
+		SccLocalPath3 = DocumentFeedClient
+		SccProjectUniqueName4 = OracleMESFeedClient\\OracleMESFeedClient.csproj
+		SccProjectName4 = OracleMESFeedClient
+		SccLocalPath4 = OracleMESFeedClient
+		SccProjectUniqueName5 = TrainingBundleFeedClient\\TrainingBundleFeedClient.csproj
+		SccProjectName5 = TrainingBundleFeedClient
+		SccLocalPath5 = TrainingBundleFeedClient
+		SccProjectUniqueName6 = TrainingRecordFeedClient\\TrainingRecordFeedClient.csproj
+		SccProjectName6 = TrainingRecordFeedClient
+		SccLocalPath6 = TrainingRecordFeedClient
+		SccProjectUniqueName7 = KronosFeedClient\\KronosFeedClient.csproj
+		SccProjectName7 = KronosFeedClient
+		SccLocalPath7 = KronosFeedClient
+		SccProjectUniqueName8 = OracleWorkOrderFeedClient\\OracleWorkOrderFeedClient.csproj
+		SccProjectName8 = OracleWorkOrderFeedClient
+		SccLocalPath8 = OracleWorkOrderFeedClient
+		SccProjectUniqueName9 = OracleInventoryFeedClient\\OracleInventoryFeedClient.csproj
+		SccProjectName9 = OracleInventoryFeedClient
+		SccLocalPath9 = OracleInventoryFeedClient
+		SccProjectUniqueName10 = NightlyTrainingRecordFeedClient\\NightlyTrainingRecordFeedClient.csproj
+		SccProjectName10 = NightlyTrainingRecordFeedClient
+		SccLocalPath10 = NightlyTrainingRecordFeedClient
+		SccProjectUniqueName11 = ..\\MESFeeds\\MESFeedClientLibrary\\MESFeedClientLibrary.csproj
+		SccProjectName11 = ../MESFeeds/MESFeedClientLibrary
+		SccLocalPath11 = ..\\MESFeeds\\MESFeedClientLibrary
+	EndGlobalSection
+EndGlobal
